@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Introduction</title>
+</head>
+<body>
+<p id="demo" onclick="styleText()">You need to remember everything.</p>
+<button id="cool" onclick="myFirstFunction()">Click me to change something</button>
+<script>
+    alert("Hello World!");
+    /*
+    * Multi-Line Comment
+    */
+    // Single Line Comment
+    // Basic click function- onclick event handler
+    function myFirstFunction() {
+        document.getElementById("demo").style.fontSize = "35px";
+    }
+
+    //Is to change the color and text of my box
+    function styleText() {
+        document.getElementById("demo").style.color = "purple";
+        document.getElementById("demo").innerHTML = "Different Content";
+    }
+</script>
+</body>
+</html>
