@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Challenge 1</title>
+</head>
+<body>
+
+<!-- Create a div tag with some text and an id named "goodbye".
+    Create a button that, when clicked, makes the text disappear
+
+    Create a button that shows the text when hidden.
+    -->
+
+<div id="goodbye">Some text.</div>
+
+<button onclick="hideText()">Hide</button>
+<button onclick="showText()">Show</button>
+
+<script>
+function hideText(){
+    document.getElementById("goodbye").style.visibility = "hidden";
+    }
+
+function showText(){
+    document.getElementById("goodbye").style.visibility = "visible";
+}
+</script>
+</body>
+</html>
