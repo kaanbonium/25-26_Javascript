@@ -1,47 +1,87 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
-    <title>Palindrome Validator</title>
+
+    <title>Palindrome Checker</title>
+
 </head>
+
 <body>
-<!--
-    0. Research what a palindrome is! (Josiah Step)
-    1. Make a textbox and button. The textbox will be where you type
-        the string you want to test. The button will activate the function
-        to test the string.
-    2. Write a Javascript function that will take the text from the textbox
-        and figure out whether or not it is a palindrome.
-    3. Based on the result of the function, the page will display either
-            a green message that the word is a palindrome, or a red message that it
-            is not.
-    Suggested words to test:
-    Mom
-    the
-    Racecar
-    Journal
--->
+
+<!-- The text box for people to type in. -->
+
 <label>Type Here:</label>
 
-<input type="" name="" id="palindrome">
 
-<div id="length"></div>
+<input type="text" id="palindrome">
+
+<!-- The result of whatever someone types. -->
+
+<div id="result"></div>
 
 <br/>
-<button onclick="palindromeCheck()">Activate function.</button>
+
+<!-- Whenever someone clicks the button below the text box, this function is activated.-->
+
+<button onclick="palindromeTrue()">Activate function.</button>
+
 
 <script>
-    function palindromeCheck(){
-        len = document.getElementById("palindrome").value.reverse()
-        if (palindrome === true){
-            document.getElementById("length").innerHTML = "<font color='green'>This is a palindrome.</font>";
-        }else{
-            document.getElementById("length").innerHTML = "<font color='red'>Not a palindrome.</font>";
+
+    function palindromeTrue() {
+
+        // Whenever someone starts the function by pressing the button, it gets assigned the value word.
+
+        let word = document.getElementById("palindrome").value;
+
+
+        // Make the word value all lowercase, allowing capital words that are palindromes to still be checked.
+
+        word = word.toLowerCase();
+
+
+        // The function for actually reversing the word, explained here.
+
+        // Make the value "reversed" blank.
+        let reversed = "";
+
+        // Make a for loop that goes through the value "word" backwards, because of i-- and - 1
+
+        // Assign this reversed word to the value i, and loop it the whole way backwards, portrayed by i >= 0.
+
+        for (let i = word.length - 1; i >= 0; i--) {
+
+            // Give reversed a new value, of reversed(blank) + the word backwards, portrayed by word.charAt(i)
+
+            reversed = reversed + word.charAt(i);
+
         }
 
+        // Final if statement, to verify whether the values match and if the word is a palindrome.
+
+        if (word === reversed) {
+
+            document.getElementById("result").innerHTML =
+
+                "<font color='green'>This is a palindrome.</font>";
+
+        } else {
+
+            document.getElementById("result").innerHTML =
+
+                "<font color='red'>Not a palindrome.</font>";
+
+        }
 
     }
+
 </script>
 
 </body>
+
 </html>
+
